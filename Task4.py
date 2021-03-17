@@ -4,6 +4,10 @@
 # 1. Write a program to reverse a string.
 # Sample input: "1234abcd"
 # Expected output: “dcba4321”
+from typing import Any, Iterator, List
+import functools
+import operator
+
 
 def reverse(st):
     if len(st) == 0:
@@ -154,3 +158,85 @@ showNumbers(3)
 
 # 10. Write a program which uses filter() to make a list whose elements are even numbers between 1
 # and 20 (both included)
+list2 = range(1, 21)
+
+eve_num = filter(lambda x: x % 2 == 0, list2)
+print(list(eve_num))
+
+# 11. Write a program which uses map() and filter() to make a list whose elements are squares of even
+# numbers in [1,2,3,4,5,6,7,8,9,10].
+
+list3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+eve_num1 = map(lambda x: x ** 2, filter(lambda x: x % 2 == 0, list3))
+
+print(eve_num1)
+
+
+# 12. Write a function to compute 5/0 and use try/except to catch the exceptions
+
+def divide():
+    return 5 / 0
+
+
+try:
+    divide()
+except ZeroDivisionError as z:
+    print("number is divided by Zero")
+except:
+    print("any other exception")
+
+# 13. Flatten the list [1,2,3,4,5,6,7] into 1234567 using reduce().
+
+list4 = [1, 2, 3, 4, 5, 6, 7]
+list_flat = functools.reduce(operator.iconcat, list4, str)
+
+print("Original List", list4)
+print("Flattened List", list_flat)
+
+
+# 14. Write a program in Python to find the values which are not divisible by 3 but are a multiple of 7.
+# Make sure to use only higher order functions.
+
+def div(n):
+    for i in n:
+        if (i % 3 != 0) & (i % 7 == 0):
+            return i
+
+
+list5 = range(1, 101)
+res = list(map(div, list5))
+print(res)
+
+
+# 15. Write a program in Python to multiply the elements of a list by itself using a traditional function
+# and pass the function to map() to complete the operation.
+
+def squ(x):
+    return x * x
+
+
+num3 = [1, 2, 3, 4, 5]
+num_squ = list(map(squ,num3))
+print(num_squ)
+
+#16. What is the output of the following codes:
+# (i) def foo():
+#      try:
+#           return 1
+#       finally:
+#              return 2
+#       k = foo()
+#       print(k)
+
+# it will retrun 2 because the finally block executes even there is a return statement in try block
+
+# (ii) def a():
+#       try:
+#           f(x, 4)
+#       finally:
+#           print('after f')
+#       print('after f?')
+#       a()
+
+# it will be "C" this function will throw erroe because "f" is not defined.

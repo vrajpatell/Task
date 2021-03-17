@@ -132,3 +132,21 @@ def change_case(st):
 st1 = input("enter string")
 camelCase(st1)
 change_case(st1)
+
+
+
+# 8. If one data type value is assigned to ‘a’ variable and then a different data type value is assigned to ‘a’
+# again. Will it change the value? If Yes then Why?
+#answer: - yes we can assign in Python regardless to its current value.
+#  Variable are essentially like an empty box, that can contains something
+# like a String number ot other value. when we assign it a value, the box will contain that value
+# and when we reassign it, it will empty out old value, and the new value will be placed inside of it.
+
+# first we storing String data type in this variable
+
+var1 = "hello"
+print(var1)
+
+# now reassigning with integer data type
+var1 = 123
+print(var1)
