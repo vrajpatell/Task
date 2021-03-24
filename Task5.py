@@ -20,11 +20,11 @@ fun1(n)
 # entered name is incorrect throw an exception and ask them to enter the name again. Make sure
 # to use read only mode.
 
-# try:
-#   with open(sys.argv[1], 'r') as file1:
-#      print(file1.read())
-# except FileNotFoundError:
-#   print("Enter Valid name of File")
+try:
+    with open(sys.argv[1], 'r') as file1:
+        print(file1.read())
+except FileNotFoundError:
+    print("Enter Valid name of File")
 
 # 3. Write a program to handle an error if the user entered a number more than four digits it should
 # return “The length is too short/long !!! Please provide only four digits”
